@@ -12,11 +12,11 @@ function setup() {
   wall = createSprite(1500, 200,60,height/2); 
   wall.shapeColor=color(80,80,80); 
   wall.debug = true; 
-} 
-  
+
   speed=random(55,90);
   weight=random(400,1500);
-
+} 
+  
   function draw() { 
     background(255,250,250); 
     
@@ -24,7 +24,7 @@ function setup() {
     {
       car.velocityX=0;
       var deformation=0.5 * weight * speed* speed/22509;
-      if(deformation>180)
+      if(deformation>=180)
       {
         car.shapeColor=color(255,0,0);
       }
@@ -32,7 +32,7 @@ function setup() {
       {
         car.shapeColor=color(230,230,0);
       }
-      if(deformation<100)
+      if(deformation<=100)
       {
         car.shapeColor=color(0,255,0);
       }
